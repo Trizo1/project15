@@ -1,0 +1,20 @@
+<div class="container" *ngIf="isDataLoaded">
+    <div class="row mb-2">
+        <div class="col-12">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+    <app-addform-worker (addWorker)="onAddWorker($event)"></app-addform-worker>
+    <app-table-workers [title]="'Программисты'" [workers]="getByType(myWorkerType.programmer)"
+        (deleteWorker)="onDeleteWorker($event)" (saveWorker)="onSaveWorker($event)">
+    </app-table-workers>
+    <app-table-workers [title]="'Дизайнеры'" [workers]="getByType(myWorkerType.designer)"
+        (deleteWorker)="onDeleteWorker($event)">
+    </app-table-workers>
+    <app-table-workers [title]="'Рекламщики'" [workers]="getByType(myWorkerType.copywriter)"
+        (deleteWorker)="onDeleteWorker($event)">
+    </app-table-workers>
+    <app-table-workers [title]="'Менеджеры'" [workers]="getByType(myWorkerType.manager)"
+        (deleteWorker)="onDeleteWorker($event)">
+    </app-table-workers>
+</div>
