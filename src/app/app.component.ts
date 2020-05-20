@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   workers: MyWorker[];
   myWorkerType = MyWorkerType;
   isDataLoaded = false;
+  searchStr = '';
 
   constructor(private httpWorkerService: HttpWorkerService) {
   }

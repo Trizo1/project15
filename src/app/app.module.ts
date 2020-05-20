@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TableWorkersComponent } from './ui/table-workers/table-workers.component';
 import { AddformWorkerComponent } from './ui/addform-worker/addform-worker.component';
+import { SearchFilterPipe } from './shared/pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableWorkersComponent,
     AddformWorkerComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule, FormsModule, ReactiveFormsModule, TextMaskModule, HttpClientModule,

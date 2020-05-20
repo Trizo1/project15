@@ -5,16 +5,20 @@
         </div>
     </div>
     <app-addform-worker (addWorker)="onAddWorker($event)"></app-addform-worker>
-    <app-table-workers [title]="'Программисты'" [workers]="getByType(myWorkerType.programmer)"
+    <div class="col-12 mt-3 mb-2">
+        <input type="text" class="form-control"
+            placeholder="Фильтрация по имени, фамилии, а также по телефону (без маски)" [(ngModel)]="searchStr">
+    </div>
+    <app-table-workers [title]="'Программисты'" [workers]="getByType(myWorkerType.programmer) | searchFilter:searchStr"
         (deleteWorker)="onDeleteWorker($event)" (saveWorker)="onSaveWorker($event)">
     </app-table-workers>
-    <app-table-workers [title]="'Дизайнеры'" [workers]="getByType(myWorkerType.designer)"
+    <app-table-workers [title]="'Дизайнеры'" [workers]="getByType(myWorkerType.designer) | searchFilter:searchStr"
         (deleteWorker)="onDeleteWorker($event)">
     </app-table-workers>
-    <app-table-workers [title]="'Рекламщики'" [workers]="getByType(myWorkerType.copywriter)"
+    <app-table-workers [title]="'Рекламщики'" [workers]="getByType(myWorkerType.copywriter) | searchFilter:searchStr"
         (deleteWorker)="onDeleteWorker($event)">
     </app-table-workers>
-    <app-table-workers [title]="'Менеджеры'" [workers]="getByType(myWorkerType.manager)"
+    <app-table-workers [title]="'Менеджеры'" [workers]="getByType(myWorkerType.manager) | searchFilter:searchStr"
         (deleteWorker)="onDeleteWorker($event)">
     </app-table-workers>
 </div>
