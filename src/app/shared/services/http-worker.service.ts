@@ -7,7 +7,6 @@ import { MyWorker } from '../worker.model';
 })
 export class HttpWorkerService {
   routeApi = 'http://localhost:3000/workers';
-  body: {};
   constructor(private http: HttpClient) {
   }
 

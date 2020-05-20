@@ -10,11 +10,6 @@ export class SearchFilterPipe implements PipeTransform {
     if (searchStr === '') {
       return workers;
     } else {
-      // let filteredWorkers = workers.filter(
-      //   (worker) => worker.name.toLowerCase().indexOf(searchStr.toLowerCase()) !== -1
-      // );
-      // console.log(filteredWorkers);
-      // return filteredWorkers;
       return workers.filter((worker) => {
         return worker.name.toLowerCase().includes(searchStr.toLowerCase()) || worker.surname.toLowerCase().includes(searchStr.toLowerCase())
           || worker.phone.includes(searchStr);
